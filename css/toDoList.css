@@ -1,5 +1,9 @@
 @import url(./reset.css);
 
+.active {
+    display: block;
+}
+
 .hidden {
     display: none;
 }

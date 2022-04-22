@@ -1,6 +1,7 @@
 const toDoForm = document.querySelector("#toDo-form");
 const inputList = document.querySelector("#inputList");
 const toDoList = document.querySelector("#toDoList");
+const completed = document.querySelector("#completed");
 
 const TODOS_KEY = "todos";
 
@@ -8,6 +9,27 @@ let toDos = [];
 
 function saveToDo() {
     localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
+}
+
+function editToDo(event) {
+    const currentList = event.target.parentElement;
+
+    console.log(currentList);
+}
+
+function completedToDo(event) {
+    // 완료 버튼의 부모요소인 li 찾기
+    const completedList = event.target.parentElement;
+
+    if (event.target.checked) {
+        // checked 상태 시 completed 로 이동
+        completed.appendChild(completedList);
+    } else {
+        // checked 상태 아닐 시 onGoing 으로 이동
+        toDoList.appendChild(completedList);
+    }
+
+    console.log(event);
 }
 
 function deleteToDo(event) {
@@ -31,14 +53,30 @@ function addToDo(listContentsObj) {
     li.id = listContentsObj.id;
     // to do list 내용을 넣은 span 요소 생성
     const newList = document.createElement("span");
+
+    // to do list 완료 체크박스 input 요소 생성
+    const completedBtn = document.createElement("input");
+    completedBtn.setAttribute("type", "checkbox");
+    // completedBtn.innerText = "V";
+    // 완료 버튼 클릭 시 to do list 완료 실행
+    completedBtn.addEventListener("click", completedToDo);
+
     // to do list 삭제 버튼 button 요소 생성
     const deleteBtn = document.createElement("button");
     deleteBtn.innerText = "X";
     // 삭제 버튼 클릭 시 to do list 삭제 실행
     deleteBtn.addEventListener("click", deleteToDo);
 
+    // to do list 내용 수정 버튼 button 요소 생성
+    const editBtn = document.createElement("button");
+    editBtn.innerText = "✏";
+    // 수정 버튼 클릭 시 to do list 수정 실행
+    editBtn.addEventListener("click", editToDo);
+
     // li 요소에 span 및 button 을 자식요소로 삽입
+    li.appendChild(completedBtn);
     li.appendChild(newList);
+    li.appendChild(editBtn);
     li.appendChild(deleteBtn);
 
     // span에 to do list 내용 삽입
