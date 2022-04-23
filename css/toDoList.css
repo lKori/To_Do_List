@@ -1,9 +1,101 @@
-@import url(./reset.css);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style-type: none;
+}
 
 .active {
-    display: block;
+  display: block;
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background: url(../img/backgroundImg_01.jpg) no-repeat;
+  background-size: cover;
+}
+
+#toDoListWrap {
+  position: relative;
+  flex-wrap: wrap;
+  width: 80vw;
+  height: 500px;
+  margin: 0 auto;
+  padding: 0 300px;
+  padding-top: 10vh;
+}
+#toDoListWrap > input {
+  display: none;
+}
+#toDoListWrap > input:checked + label {
+  font-weight: 700;
+  border-bottom: none;
+}
+#toDoListWrap label {
+  position: relative;
+  display: inline-block;
+  width: 180px;
+  height: 53px;
+  background-color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 3rem;
+  font-size: 1.5rem;
+  border: 3px solid #000;
+  border-radius: 10px 10px 0 0;
+  z-index: 10;
+}
+#toDoListWrap #onGoing, #toDoListWrap #completed {
+  position: absolute;
+  top: 116px;
+  width: 1000px;
+  height: 500px;
+  padding: 10px;
+  background-color: #fff;
+  border: 3px solid #000;
+  overflow-y: scroll;
+}
+#toDoListWrap #onGoing #toDoList, #toDoListWrap #completed #toDoList {
+  font-size: 1.6rem;
+}
+#toDoListWrap #onGoing #toDoList li, #toDoListWrap #completed #toDoList li {
+  vertical-align: middle;
+}
+#toDoListWrap #onGoing #toDoList li span, #toDoListWrap #completed #toDoList li span {
+  margin: 0 10px;
+}
+#toDoListWrap #onGoing #toDoList li input, #toDoListWrap #completed #toDoList li input {
+  width: 20px;
+  height: 20px;
+}
+#toDoListWrap #onGoing #toDoList li button, #toDoListWrap #completed #toDoList li button {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+#toDoListWrap #onGoing #toDo-form > input, #toDoListWrap #completed #toDo-form > input {
+  position: absolute;
+  bottom: 10px;
+}
+#toDoListWrap #onGoing #toDo-form #inputList, #toDoListWrap #completed #toDo-form #inputList {
+  width: 90%;
+  height: 40px;
+  font-size: 1.4rem;
+  border: 3px solid #000;
+  border-radius: 5px;
+}
+#toDoListWrap #onGoing #toDo-form #submitList, #toDoListWrap #completed #toDo-form #submitList {
+  right: 10px;
+  width: 5%;
+  height: 40px;
+}
+
+/*# sourceMappingURL=toDoList.css.map */

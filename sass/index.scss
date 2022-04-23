@@ -1,0 +1,106 @@
+$start: 0;
+$end: 95%;
+
+@import "./reset.scss";
+
+.hidden {
+  display: none;
+}
+
+@keyframes waveColors {
+  from {
+    background-position: $start 0%;
+  }
+  to {
+    background-position: $end 0%;
+  }
+}
+@-moz-keyframes waveColors {
+  from {
+    background-position: $start 0%;
+  }
+  to {
+    background-position: $end 0%;
+  }
+}
+@-webkit-keyframes waveColors {
+  from {
+    background-position: $start 0%;
+  }
+  to {
+    background-position: $end 0%;
+  }
+}
+@-o-keyframes waveColors {
+  from {
+    background-position: $start 0%;
+  }
+  to {
+    background-position: $end 0%;
+  }
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  padding-top: 33vh;
+  background: linear-gradient(to left, #12c2e9, #c471ed, #f64f59);
+  background-size: 300% 300%;
+
+  animation-name: waveColors;
+  animation-duration: 5s;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+
+  h1 {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 50px;
+    color: #fff;
+  }
+
+  #login-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 500px;
+    height: 50px;
+    padding: 0 20px;
+    margin: 0 auto;
+
+    #userName {
+      width: 80%;
+      height: 70px;
+      padding: 0 10px;
+      font-size: 1.5rem;
+      text-align: center;
+      border: 3px solid #000;
+      border-radius: 35px;
+      background-color: rgba(255, 255, 255, 0.8);
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    #submitName {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      border: 3px solid #000;
+      background: url(../img/next.png) no-repeat;
+      background-size: 90%;
+      background-position: 5px center;
+      background-color: rgba(255, 255, 255, 0.8);
+
+      &:active {
+        scale: 90%;
+      }
+    }
+  }
+}

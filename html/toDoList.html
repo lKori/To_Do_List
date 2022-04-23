@@ -1,41 +1,41 @@
 <!DOCTYPE html>
 <html lang="ko">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="../css/toDoList.css" />
-        <title>To Do List</title>
-    </head>
-    <body>
-        <div id="toDoListWrap">
-            <input id="onGoingTab" type="radio" name="tabMenu" checked />
-            <label for="onGoingTab">Ongoing</label>
-            <input id="completedTab" type="radio" name="tabMenu" />
-            <label for="completedTab">Completed</label>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/toDoList.css" />
+    <title>To Do List</title>
+  </head>
+  <body>
+    <div id="toDoListWrap">
+      <input id="onGoingTab" type="radio" name="tabMenu" checked />
+      <label for="onGoingTab">Ongoing</label>
+      <input id="completedTab" type="radio" name="tabMenu" />
+      <label for="completedTab">Completed</label>
 
-            <div id="onGoing">
-                <ul id="toDoList">
-                    to do
-                </ul>
-                <form id="toDo-form">
-                    <input id="inputList" type="text" />
-                    <input id="submitList" type="submit" value="+" />
-                </form>
-            </div>
-            <div id="completed">completed</div>
-        </div>
-        <div id="watchWrap">
-            <p id="watch"></p>
-        </div>
-        <div id="weatherWrap">
-            <span id="city"></span>
-            <span id="weather"></span>
-            <span id="temp"></span>
-        </div>
-        <script src="../js/toDoList.js"></script>
-        <script src="../js/watch.js"></script>
-        <script src="../js/weather.js"></script>
-        <script src="../js/radioBtn.js"></script>
-    </body>
+      <div id="onGoing">
+        <ul id="toDoList">
+          <h2>To Do</h2>
+        </ul>
+        <form id="toDo-form">
+          <input id="inputList" type="text" />
+          <input id="submitList" type="submit" value="+" />
+        </form>
+      </div>
+      <div id="completed">completed</div>
+    </div>
+    <div id="watchWrap">
+      <p id="watch"></p>
+    </div>
+    <div id="weatherWrap">
+      <span id="city"></span>
+      <span id="weather"></span>
+      <span id="temp"></span>
+    </div>
+    <script src="../js/toDoList.js"></script>
+    <script src="../js/watch.js"></script>
+    <script src="../js/weather.js"></script>
+    <script src="../js/radioBtn.js"></script>
+  </body>
 </html>
