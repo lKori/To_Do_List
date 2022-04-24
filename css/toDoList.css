@@ -17,20 +17,34 @@ li {
 }
 
 body {
+  position: relative;
   width: 100vw;
   height: 100vh;
-  background: url(../img/backgroundImg_01.jpg) no-repeat;
+  padding-top: 50px;
+}
+body img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   background-size: cover;
+  z-index: -5;
+}
+body #userTitle {
+  font-size: 3rem;
+  text-align: center;
+  color: #fff;
 }
 
 #toDoListWrap {
   position: relative;
   flex-wrap: wrap;
   width: 80vw;
-  height: 500px;
+  height: auto;
   margin: 0 auto;
-  padding: 0 300px;
-  padding-top: 10vh;
+  padding: 0 200px;
+  padding-top: 5vh;
 }
 #toDoListWrap > input {
   display: none;
@@ -55,19 +69,31 @@ body {
 }
 #toDoListWrap #onGoing, #toDoListWrap #completed {
   position: absolute;
-  top: 116px;
-  width: 1000px;
-  height: 500px;
-  padding: 10px;
+  top: calc(5vh + 50px);
+  width: 800px;
+  height: 70vh;
+  padding: 20px;
   background-color: #fff;
   border: 3px solid #000;
-  overflow-y: scroll;
+  border-radius: 0 10px 10px 10px;
 }
 #toDoListWrap #onGoing #toDoList, #toDoListWrap #completed #toDoList {
   font-size: 1.6rem;
+  height: 90%;
+  overflow-y: scroll;
+  padding-top: 50px;
+}
+#toDoListWrap #onGoing #toDoList h2, #toDoListWrap #completed #toDoList h2 {
+  position: absolute;
+  display: block;
+  width: 700px;
+  height: 70px;
+  top: 5px;
+  background-color: #fff;
 }
 #toDoListWrap #onGoing #toDoList li, #toDoListWrap #completed #toDoList li {
   vertical-align: middle;
+  height: 40px;
 }
 #toDoListWrap #onGoing #toDoList li span, #toDoListWrap #completed #toDoList li span {
   margin: 0 10px;
@@ -75,11 +101,22 @@ body {
 #toDoListWrap #onGoing #toDoList li input, #toDoListWrap #completed #toDoList li input {
   width: 20px;
   height: 20px;
+  vertical-align: middle;
 }
 #toDoListWrap #onGoing #toDoList li button, #toDoListWrap #completed #toDoList li button {
-  width: 20px;
-  height: 20px;
+  all: unset;
+  width: 25px;
+  height: 25px;
   margin-right: 5px;
+  font-size: 1rem;
+  text-align: center;
+  border-radius: 5px;
+}
+#toDoListWrap #onGoing #toDoList li button:nth-child(3), #toDoListWrap #completed #toDoList li button:nth-child(3) {
+  background-color: rgb(77, 255, 77);
+}
+#toDoListWrap #onGoing #toDoList li button:last-child, #toDoListWrap #completed #toDoList li button:last-child {
+  background-color: rgb(254, 76, 76);
 }
 #toDoListWrap #onGoing #toDo-form > input, #toDoListWrap #completed #toDo-form > input {
   position: absolute;
@@ -96,6 +133,85 @@ body {
   right: 10px;
   width: 5%;
   height: 40px;
+}
+#toDoListWrap #completed #completedList {
+  font-size: 1.6rem;
+  height: 99%;
+  overflow-y: scroll;
+  padding-top: 50px;
+}
+#toDoListWrap #completed #completedList h2 {
+  position: absolute;
+  display: block;
+  width: 700px;
+  height: 70px;
+  top: 5px;
+  background-color: #fff;
+}
+#toDoListWrap #completed #completedList li {
+  vertical-align: middle;
+  height: 40px;
+}
+#toDoListWrap #completed #completedList li span {
+  margin: 0 10px;
+}
+#toDoListWrap #completed #completedList li input {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+}
+#toDoListWrap #completed #completedList li button {
+  all: unset;
+  width: 25px;
+  height: 25px;
+  margin-right: 5px;
+  font-size: 1rem;
+  text-align: center;
+  border-radius: 5px;
+}
+#toDoListWrap #completed #completedList li button:nth-child(3) {
+  background-color: rgb(77, 255, 77);
+}
+#toDoListWrap #completed #completedList li button:last-child {
+  background-color: rgb(254, 76, 76);
+}
+
+#watchWrap {
+  position: absolute;
+  top: calc(5vh + 165px);
+  right: 20vw;
+  width: 300px;
+  height: 300px;
+  padding: 30px;
+  background-color: #fff;
+  border: 3px solid #000;
+  border-radius: 10px;
+  text-align: center;
+}
+#watchWrap h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+#watchWrap p {
+  font-size: 2rem;
+  line-height: 5rem;
+}
+
+#weatherWrap {
+  position: absolute;
+  top: calc(5vh + 500px);
+  right: 20vw;
+  width: 300px;
+  height: 35%;
+  padding: 40px;
+  background-color: #fff;
+  border: 3px solid #000;
+  border-radius: 10px;
+  text-align: center;
+}
+#weatherWrap span {
+  font-size: 2rem;
+  line-height: 5rem;
 }
 
 /*# sourceMappingURL=toDoList.css.map */

@@ -12,8 +12,8 @@ function onGeoOk(position) {
     fetch(url)
         .then((response) => response.json())
         .then((data) => {
-            city.innerText = data.name;
-            weather.innerText = data.weather[0].main;
+            city.innerText = data.name + "\n";
+            weather.innerText = data.weather[0].main + "\n";
             temp.innerText = `${Math.ceil(data.main.temp)}℃`;
         });
 }

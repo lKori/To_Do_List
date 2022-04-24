@@ -1,11 +1,16 @@
+const userTitle = document.querySelector("#userTitle");
 const toDoForm = document.querySelector("#toDo-form");
 const inputList = document.querySelector("#inputList");
 const toDoList = document.querySelector("#toDoList");
-const completed = document.querySelector("#completed");
+const completedList = document.querySelector("#completed ul");
 
 const TODOS_KEY = "todos";
 
 let toDos = [];
+
+function welcomeUser() {
+    userTitle.innerText = `${localStorage.getItem("user")}'s To Do List`;
+}
 
 function saveToDo() {
     localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
@@ -14,19 +19,19 @@ function saveToDo() {
 function editToDo(event) {
     const currentList = event.target.parentElement;
 
-    console.log(currentList);
+    alert("Comming soon!");
 }
 
 function completedToDo(event) {
     // 완료 버튼의 부모요소인 li 찾기
-    const completedList = event.target.parentElement;
+    const succeedList = event.target.parentElement;
 
     if (event.target.checked) {
         // checked 상태 시 completed 로 이동
-        completed.appendChild(completedList);
+        completedList.appendChild(succeedList);
     } else {
         // checked 상태 아닐 시 onGoing 으로 이동
-        toDoList.appendChild(completedList);
+        toDoList.appendChild(succeedList);
     }
 
     console.log(event);
@@ -127,3 +132,5 @@ if (savedToDos) {
     toDos = parsedToDos;
     parsedToDos.forEach(addToDo);
 }
+
+welcomeUser();

@@ -1,6 +1,6 @@
 const onGoing = document.querySelector("#onGoing");
 const onGoingTab = document.querySelector("#onGoingTab");
-// const completed = document.querySelector("#completed");
+const completed = document.querySelector("#completed");
 const completedTab = document.querySelector("#completedTab");
 
 function onGoingActive() {
