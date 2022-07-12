@@ -1,240 +1,256 @@
 @import "./reset.scss";
 
 .active {
-    display: block;
+  display: block;
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
 
 body {
-    position: relative;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  padding-top: 50px;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100vw;
     height: 100vh;
-    padding-top: 50px;
+    background-size: contain;
+    z-index: -5;
+  }
 
-    img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        background-size: cover;
-        z-index: -5;
-    }
-
-    #userTitle {
-        font-size: 3rem;
-        text-align: center;
-        color: #fff;
-    }
+  #userTitle {
+    font-size: 3rem;
+    text-align: center;
+    color: #fff;
+  }
 }
 
 #toDoListWrap {
+  position: relative;
+  flex-wrap: wrap;
+  width: 80vw;
+  height: auto;
+  margin: 0 auto;
+  padding: 0 200px;
+  padding-top: 5vh;
+
+  & > input {
+    display: none;
+
+    &:checked + label {
+      font-weight: 700;
+      border-bottom: none;
+    }
+  }
+
+  label {
     position: relative;
-    flex-wrap: wrap;
-    width: 80vw;
-    height: auto;
-    margin: 0 auto;
-    padding: 0 200px;
-    padding-top: 5vh;
+    display: inline-block;
+    width: 180px;
+    height: 53px;
+    background-color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 3rem;
+    font-size: 1.5rem;
+    border: 3px solid #000;
+    border-radius: 10px 10px 0 0;
+    z-index: 10;
+  }
 
-    & > input {
-        display: none;
+  #onGoing {
+    position: absolute;
+    top: calc(5vh + 50px);
+    width: 800px;
+    height: 70vh;
+    padding: 20px;
+    background-color: #fff;
+    border: 3px solid #000;
+    border-radius: 0 10px 10px 10px;
 
-        &:checked + label {
-            font-weight: 700;
-            border-bottom: none;
-        }
-    }
+    #toDoList {
+      font-size: 1.6rem;
+      height: 90%;
+      overflow-y: scroll;
+      padding-top: 50px;
 
-    label {
-        position: relative;
-        display: inline-block;
-        width: 180px;
-        height: 53px;
-        background-color: #fff;
-        text-align: center;
-        text-transform: uppercase;
-        line-height: 3rem;
-        font-size: 1.5rem;
-        border: 3px solid #000;
-        border-radius: 10px 10px 0 0;
-        z-index: 10;
-    }
-
-    #onGoing {
+      h2 {
         position: absolute;
-        top: calc(5vh + 50px);
-        width: 800px;
-        height: 70vh;
-        padding: 20px;
+        display: block;
+        width: 700px;
+        height: 70px;
+        top: 5px;
         background-color: #fff;
+      }
+
+      li {
+        vertical-align: middle;
+        height: 40px;
+
+        & span {
+          margin: 0 10px;
+        }
+
+        & input {
+          width: 20px;
+          height: 20px;
+          vertical-align: middle;
+        }
+
+        & button {
+          all: unset;
+          width: 25px;
+          height: 25px;
+          margin-right: 5px;
+          font-size: 1rem;
+          text-align: center;
+          border-radius: 5px;
+
+          &:nth-child(3) {
+            background-color: rgb(77, 255, 77);
+          }
+
+          &:last-child {
+            background-color: rgb(254, 76, 76);
+          }
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    #toDo-form {
+      & > input {
+        position: absolute;
+        bottom: 10px;
+      }
+      #inputList {
+        width: 90%;
+        height: 40px;
+        font-size: 1rem;
+        padding: 0 10px;
         border: 3px solid #000;
-        border-radius: 0 10px 10px 10px;
+        border-radius: 5px;
+      }
 
-        #toDoList {
-            font-size: 1.6rem;
-            height: 90%;
-            overflow-y: scroll;
-            padding-top: 50px;
+      #submitList {
+        right: 10px;
+        width: 5%;
+        height: 40px;
 
-            h2 {
-                position: absolute;
-                display: block;
-                width: 700px;
-                height: 70px;
-                top: 5px;
-                background-color: #fff;
-            }
-
-            li {
-                vertical-align: middle;
-                height: 40px;
-
-                & span {
-                    margin: 0 10px;
-                }
-
-                & input {
-                    width: 20px;
-                    height: 20px;
-                    vertical-align: middle;
-                }
-
-                & button {
-                    all: unset;
-                    width: 25px;
-                    height: 25px;
-                    margin-right: 5px;
-                    font-size: 1rem;
-                    text-align: center;
-                    border-radius: 5px;
-
-                    &:nth-child(3) {
-                        background-color: rgb(77, 255, 77);
-                    }
-
-                    &:last-child {
-                        background-color: rgb(254, 76, 76);
-                    }
-                }
-            }
+        &:hover {
+          cursor: pointer;
         }
-
-        #toDo-form {
-            & > input {
-                position: absolute;
-                bottom: 10px;
-            }
-            #inputList {
-                width: 90%;
-                height: 40px;
-                font-size: 1.4rem;
-                border: 3px solid #000;
-                border-radius: 5px;
-            }
-
-            #submitList {
-                right: 10px;
-                width: 5%;
-                height: 40px;
-            }
-        }
+      }
     }
+  }
 
-    #completed {
-        @extend #onGoing;
+  #completed {
+    @extend #onGoing;
 
-        #completedList {
-            font-size: 1.6rem;
-            height: 99%;
-            overflow-y: scroll;
-            padding-top: 50px;
+    #completedList {
+      font-size: 1.6rem;
+      height: 99%;
+      overflow-y: scroll;
+      padding-top: 50px;
 
-            h2 {
-                position: absolute;
-                display: block;
-                width: 700px;
-                height: 70px;
-                top: 5px;
-                background-color: #fff;
-            }
+      h2 {
+        position: absolute;
+        display: block;
+        width: 700px;
+        height: 70px;
+        top: 5px;
+        background-color: #fff;
+      }
 
-            li {
-                vertical-align: middle;
-                height: 40px;
+      li {
+        vertical-align: middle;
+        height: 40px;
 
-                & span {
-                    margin: 0 10px;
-                }
-
-                & input {
-                    width: 20px;
-                    height: 20px;
-                    vertical-align: middle;
-                }
-
-                & button {
-                    all: unset;
-                    width: 25px;
-                    height: 25px;
-                    margin-right: 5px;
-                    font-size: 1rem;
-                    text-align: center;
-                    border-radius: 5px;
-
-                    &:nth-child(3) {
-                        background-color: rgb(77, 255, 77);
-                    }
-
-                    &:last-child {
-                        background-color: rgb(254, 76, 76);
-                    }
-                }
-            }
+        & span {
+          margin: 0 10px;
         }
+
+        & input {
+          width: 20px;
+          height: 20px;
+          vertical-align: middle;
+        }
+
+        & button {
+          all: unset;
+          width: 25px;
+          height: 25px;
+          margin-right: 5px;
+          font-size: 1rem;
+          text-align: center;
+          border-radius: 5px;
+
+          &:nth-child(3) {
+            background-color: rgb(77, 255, 77);
+          }
+
+          &:last-child {
+            background-color: rgb(254, 76, 76);
+          }
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
     }
+  }
 }
 
 #watchWrap {
-    position: absolute;
-    top: calc(5vh + 165px);
-    right: 20vw;
-    width: 300px;
-    height: 300px;
-    padding: 30px;
-    background-color: #fff;
-    border: 3px solid #000;
-    border-radius: 10px;
-    text-align: center;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 10% 0;
+  top: calc(5vh + 165px);
+  right: 20vw;
+  width: 300px;
+  height: 30%;
+  padding: 30px;
+  background-color: #fff;
+  border: 3px solid #000;
+  border-radius: 10px;
+  text-align: center;
 
-    h2 {
-        font-size: 2rem;
-        margin-bottom: 30px;
-    }
+  h2 {
+    font-size: 2rem;
+  }
 
-    p {
-        font-size: 2rem;
-        line-height: 5rem;
-    }
+  p {
+    font-size: 1.8rem;
+    line-height: 200%;
+  }
 }
 
 #weatherWrap {
-    position: absolute;
-    top: calc(5vh + 500px);
-    right: 20vw;
-    width: 300px;
-    height: 35%;
-    padding: 40px;
-    background-color: #fff;
-    border: 3px solid #000;
-    border-radius: 10px;
-    text-align: center;
+  position: absolute;
+  top: calc(5vh + 500px);
+  right: 20vw;
+  width: 300px;
+  height: 35%;
+  padding: 40px;
+  background-color: #fff;
+  border: 3px solid #000;
+  border-radius: 10px;
+  text-align: center;
 
-    span {
-        font-size: 2rem;
-        line-height: 5rem;
-    }
+  span {
+    font-size: 1.8rem;
+    line-height: 200%;
+  }
 }

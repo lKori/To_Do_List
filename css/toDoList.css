@@ -28,7 +28,7 @@ body img {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-size: cover;
+  background-size: contain;
   z-index: -5;
 }
 body #userTitle {
@@ -118,6 +118,9 @@ body #userTitle {
 #toDoListWrap #onGoing #toDoList li button:last-child, #toDoListWrap #completed #toDoList li button:last-child {
   background-color: rgb(254, 76, 76);
 }
+#toDoListWrap #onGoing #toDoList li button:hover, #toDoListWrap #completed #toDoList li button:hover {
+  cursor: pointer;
+}
 #toDoListWrap #onGoing #toDo-form > input, #toDoListWrap #completed #toDo-form > input {
   position: absolute;
   bottom: 10px;
@@ -125,7 +128,8 @@ body #userTitle {
 #toDoListWrap #onGoing #toDo-form #inputList, #toDoListWrap #completed #toDo-form #inputList {
   width: 90%;
   height: 40px;
-  font-size: 1.4rem;
+  font-size: 1rem;
+  padding: 0 10px;
   border: 3px solid #000;
   border-radius: 5px;
 }
@@ -133,6 +137,9 @@ body #userTitle {
   right: 10px;
   width: 5%;
   height: 40px;
+}
+#toDoListWrap #onGoing #toDo-form #submitList:hover, #toDoListWrap #completed #toDo-form #submitList:hover {
+  cursor: pointer;
 }
 #toDoListWrap #completed #completedList {
   font-size: 1.6rem;
@@ -175,13 +182,20 @@ body #userTitle {
 #toDoListWrap #completed #completedList li button:last-child {
   background-color: rgb(254, 76, 76);
 }
+#toDoListWrap #completed #completedList li button:hover {
+  cursor: pointer;
+}
 
 #watchWrap {
   position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 10% 0;
   top: calc(5vh + 165px);
   right: 20vw;
   width: 300px;
-  height: 300px;
+  height: 30%;
   padding: 30px;
   background-color: #fff;
   border: 3px solid #000;
@@ -190,11 +204,10 @@ body #userTitle {
 }
 #watchWrap h2 {
   font-size: 2rem;
-  margin-bottom: 30px;
 }
 #watchWrap p {
-  font-size: 2rem;
-  line-height: 5rem;
+  font-size: 1.8rem;
+  line-height: 200%;
 }
 
 #weatherWrap {
@@ -210,8 +223,8 @@ body #userTitle {
   text-align: center;
 }
 #weatherWrap span {
-  font-size: 2rem;
-  line-height: 5rem;
+  font-size: 1.8rem;
+  line-height: 200%;
 }
 
 /*# sourceMappingURL=toDoList.css.map */
